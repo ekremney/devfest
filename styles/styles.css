@@ -16,12 +16,12 @@
   --link-hover-color: #136ff6;
   --background-color: #fff;
   --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
+  --highlight-background-color: #2D1A41;
   --text-color: #000;
-  --button-primary-color: rgba(255, 132, 0, 0.88);
-  --button-primary-color-hover: rgb(184, 125, 0);
-  --button-secondary-color: rgb(145, 64, 229);
-  --button-secondary-color-hover: rgb(191, 140, 245);
+  --button-primary-color: #FF8400;
+  --button-primary-color-hover: #B87D00;
+  --button-secondary-color: #9140E5;
+  --button-secondary-color-hover: #BF8CF5;
 
   /* fonts */
   --body-font-family: 'Source Sans 3', roboto-fallback;
@@ -296,7 +296,7 @@ main .section {
 }
 
 main .section:nth-child(even) {
-  background-color: rgb(238, 229, 249);
+  background-color: #EEE5F9;
 }
 
 @media (min-width: 600px) {
@@ -315,4 +315,7 @@ main .section:nth-child(even) {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+  color: white;
+  text-align: center;
 }
+
