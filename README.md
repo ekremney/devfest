@@ -1,5 +1,5 @@
 # Your Project's Title...
-Your project's description...
+DISCLAIMER: This is a rewrite attempt of https://devfest.istanbul homepage. For demo purposes only. Not meant to be used in production. All content belongs to https://devfest.istanbul 
 
 ## Environments
 - Preview: https://main--devfest--ekremney.hlx.page/

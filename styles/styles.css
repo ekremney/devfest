@@ -10,54 +10,71 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
   --background-color: #fff;
   --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
+  --highlight-background-color: #2D1A41;
   --text-color: #000;
+  --button-primary-color: #FF8400;
+  --button-primary-color-hover: #B87D00;
+  --button-secondary-color: #9140E5;
+  --button-secondary-color-hover: #BF8CF5;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: 'Source Sans 3', roboto-fallback;
+  --heading-font-family: ubuntu, arial, 'sans-serif';
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-l: 18px;
+  --body-font-size-m: 18px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
+  --heading-font-size-xxl: 38px;
+  --heading-font-size-xl: 34px;
   --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-m: 14px;
+  --heading-font-size-s: 24px;
+  --heading-font-size-xs: 20px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 50px;
+}
 
+/* latin */
+@font-face {
+  font-family: ubuntu;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ubuntu-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 100.06%;
-  ascent-override: 95%;
-  src: local('Arial');
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/source-sans-3-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 
 @media (min-width: 900px) {
   :root {
+    --body-font-size-l: 24px;
+    --body-font-size-m: 18px;
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
     --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-m: 14px;
+    --heading-font-size-s: 32px;
+    --heading-font-size-xs: 24px;
   }
 }
 
@@ -65,10 +82,13 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+
+  --webkit-font-smoothing: antialiased;
 }
 
 body.appear {
@@ -89,12 +109,48 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.285;
+  letter-spacing: -.025em;
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.235;
+  letter-spacing: -.025em;
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: 0;
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: 0;
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
@@ -140,28 +196,33 @@ a:hover {
 }
 
 /* buttons */
+p.button-container {
+  margin: 0;
+}
+
 a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 12px 0;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
+  background-color: var(--button-primary-color);
+  margin: 8px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 9px;
+  width: 160px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+a.button:hover, a.button:focus, button:hover, button:focus {
+  background-color: var(--button-primary-color-hover);
   cursor: pointer;
 }
 
@@ -171,9 +232,12 @@ button:disabled, button:disabled:hover {
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+  background-color: var(--button-secondary-color);
+}
+
+a.button.secondary:hover, button.secondary:hover {
+  background-color: var(--button-secondary-color-hover);
+  cursor: pointer;
 }
 
 main input {
@@ -232,6 +296,10 @@ main .section {
   padding: 64px 16px;
 }
 
+main .section:nth-child(even) {
+  background-color: #EEE5F9;
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
@@ -248,4 +316,7 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+  color: white;
+  text-align: center;
 }
+
