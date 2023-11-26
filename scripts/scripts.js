@@ -1,6 +1,5 @@
 import {
   sampleRUM,
-  buildBlock,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -19,8 +18,9 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks(main) {
+function buildAutoBlocks() {
   try {
+    // eslint-disable-next-line no-console
     console.debug('Autoblocking');
   } catch (error) {
     // eslint-disable-next-line no-console

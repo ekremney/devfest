@@ -247,18 +247,6 @@ header nav .nav-sections ul > li > ul > li {
     margin-bottom: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li:first-child {
-    border-bottom: 1.5px solid white;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li:hover {
-    border-bottom: 1.5px solid white;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li a:hover {
-    text-decoration: none;
-  }
-
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
@@ -289,6 +277,18 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li:hover {
+    border-bottom: 1.5px solid white;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li a:hover {
+    text-decoration: none;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li:first-child {
+    border-bottom: 1.5px solid white;
   }
 }
 
